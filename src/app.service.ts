@@ -19,8 +19,7 @@ async datasetCreate() {
   async getUser(){
     const {BigQuery} = require('@google-cloud/bigquery')
     const bigquery = new BigQuery();
-    
-    // const dataset = bigquery.dataset('vpsql');
+     // const dataset = bigquery.dataset('vpsql');
     // const destinationTable = dataset.table('M_USER');
     
     // const query = `SELECT * FROM \`virtus-platform.testsing_googlesheet.data_penjualan\``;
