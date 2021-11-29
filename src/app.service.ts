@@ -17,13 +17,32 @@ async datasetCreate() {
   }
 
   async getUser(){
+
+//     const { GoogleSpreadsheet } = require("google-spreadsheet");
+
+// const creds = require('C:/Users/desya/Downloads/virtus-platform-2be1302457ca.json');
+
+//   const doc = new GoogleSpreadsheet('19MMI8tSpnWcsFH60l8PQkyPYaOFafTm3wyx20rz825s');
+//   await doc.useServiceAccountAuth(creds);
+//   await doc.loadInfo();
+//   const sheet = doc.sheetsByIndex[0];
+//   console.log(`Title: ${sheet.title}`);
+
+
+  const options = {
+    keyFilename: 'C:/Users/desya/Downloads/virtus-platform-2be1302457ca.json',
+    projectId: 'virtus-platform',
+    scopes:["https://www.googleapis.com/auth/drive",
+    "https://www.googleapis.com/auth/bigquery"]
+  };
+
     const {BigQuery} = require('@google-cloud/bigquery')
-    const bigquery = new BigQuery();
+    const bigquery = new BigQuery(options);
      // const dataset = bigquery.dataset('vpsql');
     // const destinationTable = dataset.table('M_USER');
     
-    // const query = `SELECT * FROM \`virtus-platform.testsing_googlesheet.data_penjualan\``;
-    const query = `SELECT * FROM \`virtus-platform.vpsql.M_USER\``;
+    const query = `SELECT * FROM \`virtus-platform.testsing_googlesheet.vti-forum\``;
+    // const query = `SELECT * FROM \`virtus-platform.vpsql.M_USER\``;
     const queryOptions = {
       query: query,
       location: 'US',
