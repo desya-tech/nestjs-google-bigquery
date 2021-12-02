@@ -17,7 +17,7 @@ async datasetCreate() {
   }
 
   async getUser(){
-
+  
   //read data from spreadsheet
   const { GoogleSpreadsheet } = require("google-spreadsheet");
   const creds = require('C:/Users/desya/Downloads/virtus-platform-2be1302457ca.json');
@@ -26,6 +26,7 @@ async datasetCreate() {
   await doc.loadInfo();
   const sheet = doc.sheetsByIndex[0];
   console.log(`Title: ${sheet.title}`);
+  console.log(doc.loadInfo())
 
 //read data from bigquery spreadsheet
   const options = {
@@ -40,7 +41,7 @@ async datasetCreate() {
      // const dataset = bigquery.dataset('vpsql');
     // const destinationTable = dataset.table('M_USER');
     
-    const query = `SELECT * FROM \`virtus-platform.testsing_googlesheet.vti-forum\``;
+    const query = `SELECT * FROM \`virtus-platform.vpsql.M_VTI_FORUM_DISCORD_MANUAL\``;
     // const query = `SELECT * FROM \`virtus-platform.vpsql.M_USER\``;
     const queryOptions = {
       query: query,
