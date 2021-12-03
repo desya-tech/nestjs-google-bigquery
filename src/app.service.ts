@@ -41,7 +41,7 @@ async datasetCreate() {
      // const dataset = bigquery.dataset('vpsql');
     // const destinationTable = dataset.table('M_USER');
     
-    const query = `SELECT * FROM \`virtus-platform.vpsql.M_VTI_FORUM_DISCORD_MANUAL\``;
+    const query = `SELECT * FROM \`virtus-platform.vpsql.M_VTI_FORUM_DISCORD\``;
     // const query = `SELECT * FROM \`virtus-platform.vpsql.M_USER\``;
     const queryOptions = {
       query: query,
